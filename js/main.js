@@ -24,7 +24,24 @@ function saveBookmark(e){
     }else {
         // Getting Bookmarks that already exists and converting it into JSON.
         var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+        // Adding bookmark to array.
+        bookmarks.push(bookmark);
+
+        // Resetting Local Storage.
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
     }
     // Preventing form submission.
     e.preventDefault();
+}
+function fetchBookmark(){
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    
+    // Fetching Output ID.
+    var bookmarkResult = document.getElementById('bookmarks');
+    bookmarkResult.innerHTML = '';
+    for(var i = 0; i < bookmarks.length(); i++){
+        
+    }
 }

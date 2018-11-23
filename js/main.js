@@ -6,12 +6,25 @@ function saveBookmark(e){
     var siteName = document.getElementById("site-name").value;
     var siteUrl= document.getElementById("site-url").value;
    
-    var bookmarks = {
+    var bookmark = {
         site_name:siteName,
         site_url:siteUrl
     }
 
-    console.log(bookmarks);
+    if (localStorage.getItem('bookmarks') === null){
+        // Declaring an empty array.
+        var bookmarks = [];
+
+        // Adding inputted bookmark to the bookarks array.
+        bookmarks.push(bookmark);
+
+        // Setting to Local Storage and converting array into string.
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+    }else {
+        // Getting Bookmarks that already exists and converting it into JSON.
+        var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    }
     // Preventing form submission.
     e.preventDefault();
 }

@@ -4,6 +4,9 @@
     font-family: 'Playfair Display', serif;
 
 }
+.custom-heading {
+    font-family: 'Playball';
+}
 .well {
     background: beige;
     margin-top: 5px;

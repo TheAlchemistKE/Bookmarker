@@ -4,6 +4,15 @@
     font-family: 'Playfair Display', serif;
 
 }
+.well {
+    background: beige;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+a.btn {
+    margin-right: 10px !important;
+}
 footer {
     text-align: center;
     font-family: 'Playball', serif;

@@ -41,7 +41,14 @@ function fetchBookmark(){
     // Fetching Output ID.
     var bookmarkResult = document.getElementById('bookmarks');
     bookmarkResult.innerHTML = '';
-    for(var i = 0; i < bookmarks.length(); i++){
+    for(var i = 0; i < bookmarks.length; i++){
+        var site_name = bookmarks[i].site_name;
+        var site_url = bookmarks[i].site_url;
         
+        bookmarkResult.innerHTML += '<div class="well well-lg">'+
+                                    '<h4>'+site_name+'</h4>'+
+                                    '<a class="btn btn-primary" target="_blank" href="'+site_url+'">Visit</a>'+
+                                    '<a onclick="deleteBookmark(\''+site_url+'\')" class="btn btn-danger" href="#">Delete</a>'+
+                                    '</div>';
     }
 }
